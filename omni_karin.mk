@@ -15,14 +15,11 @@
 # Bootanimation
 TARGET_BOOTANIMATION_SIZE := 1440x814
 
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    telephony.lteOnGSMDevice=1
-
-# Inherit AOSP Kitakami common device parts
+# Inherit AOSP Karin common device parts
 $(call inherit-product, device/sony/karin/aosp_sgp771.mk)
 
 # Inherit Omni GSM telephony parts
+$(call inherit-product, device/sony/common/radio.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from our custom product configuration
