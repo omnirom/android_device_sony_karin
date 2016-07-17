@@ -22,9 +22,6 @@ $(call inherit-product, device/sony/karin/aosp_sgp771.mk)
 $(call inherit-product, device/sony/common/radio.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common_tablet.mk)
-
 # Inherit TWRP requirements
 $(call inherit-product, device/sony/karin_windy/twrp.mk)
 
