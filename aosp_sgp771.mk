@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+DEVICE_PACKAGE_OVERLAYS += \
+    device/sony/karin/overlay
+
 # Device Specific Permissions
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
@@ -38,6 +41,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     InCallUI \
     Stk
+
+# AD7146 - PAD controller
+PRODUCT_PROPERTY_OVERRIDES += \
+    service.pad1.control.start=pad1_on \
+    service.pad2.control.start=pad2_on
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/karin_windy/aosp_sgp7xx_common.mk)
